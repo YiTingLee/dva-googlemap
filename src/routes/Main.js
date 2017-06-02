@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'dva';
 import styles from './Main.css';
+import SelectBar from '../components/select_bar';
 
 class Main extends Component {
   constructor(props){
@@ -24,10 +25,10 @@ class Main extends Component {
       <div>
         <div>lat={this.state.lat}</div>
         <div>lng={this.state.lon}</div>
-        {/*<div>
+        <div>
           <SelectBar lat={this.state.lat} lng={this.state.lon} />
         </div>
-        <div className="map">
+        {/*<div className="map">
           <SimpleMapExample lat={this.state.lat} lng={this.state.lon} />
         </div>*/}
         END
