@@ -9,9 +9,9 @@ class SelectBar extends Component{
   }
 
   onSelectChange(event){
-    console.log(event.target.value);
+    // console.log(event.target.value);
     // this.props.fetchTaxiLocation(event.target.value);
-    dispatch({
+    this.props.dispatch({
         type:'main/fetchTaxiLocation',
         payload:event.target.value,
     });
