@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'dva';
 import styles from './Main.css';
 import SelectBar from '../components/select_bar';
+import SimpleMapExample from '../components/google_map';
 
 class Main extends Component {
   constructor(props){
@@ -28,9 +29,9 @@ class Main extends Component {
         <div>
           <SelectBar lat={this.state.lat} lng={this.state.lon} />
         </div>
-        {/*<div className="map">
+        <div className={styles.map}>
           <SimpleMapExample lat={this.state.lat} lng={this.state.lon} />
-        </div>*/}
+        </div>
         END
       </div>
     );
