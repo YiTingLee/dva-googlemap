@@ -13,7 +13,7 @@ const SimpleMapExampleGoogleMap = withGoogleMap(props => (
     defaultCenter={{ lat: props.lat, lng: props.lng}}
   >
     {props.markers}
-    {/*{props.directions && <DirectionsRenderer directions={props.directions} />}*/}
+    {props.directions && <DirectionsRenderer directions={props.directions} />}
   </GoogleMap>
 ));
 
@@ -43,7 +43,7 @@ class SimpleMapExample extends Component {
   }
 
   render() {
-    console.log("TaxiInfo:",this.props.taxiInfo);
+    // console.log("TaxiInfo:",this.props.taxiInfo);
     // console.log("Connect Route:",this.props.route);
 
     if(!this.props.lat)
@@ -60,14 +60,17 @@ class SimpleMapExample extends Component {
         lat = {this.props.lat}
         lng = {this.props.lng}
         markers = {this.renderMarkers()}
-        
+        directions={!this.props.route?null:this.props.route.directionsResponse}
       />
     );
   }
 }
 
 function mapStateToProps(state){
-  return {taxiInfo : state.main.taxiInfo};
+  return {
+    taxiInfo : state.main.taxiInfo,
+    route : state.main.directionsResponse
+  };
 }
 
 export default connect(mapStateToProps)(SimpleMapExample);

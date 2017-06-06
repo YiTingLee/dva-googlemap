@@ -23,11 +23,16 @@ export default {
       // console.log("reducers",taxiInfo);
       return { ...state, taxiInfo };
     },
+    directionsFinish(state,directionsResponse){
+      // console.log("response:",directionsResponse);
+      return {...state, directionsResponse};
+    }
   },
   effects: {
     *fetchDirecions({ payload: { lat, lng, olat, olng } }, { call, put }) {
-      const result = yield call(fetchDirecions, lat, lng, olat, olng);
-      console.log("eff result:",result);
+      const directionsResponse = yield call(fetchDirecions, lat, lng, olat, olng);
+      // console.log("eff result:",directionsResponse);
+      yield put({type:'directionsFinish', directionsResponse});
     }
   },
   subscriptions: {},

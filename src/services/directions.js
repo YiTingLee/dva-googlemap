@@ -10,7 +10,7 @@ export async function fetchDirecions(lat,lng,olat,olng){
     }, (result, status) => {
        if (status === google.maps.DirectionsStatus.OK) {
         resolve(result);
-        console.log("latlng:",result)
+        console.log("directionsResponse:",result)
        } else {
          console.error(`error fetching directions.`);
          reject();
