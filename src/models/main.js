@@ -1,4 +1,5 @@
 import { driversLocation } from '../data/sample_drivers_location';
+import { fetchDirecions } from '../services/directions';
 
 export default {
   namespace: 'main',
@@ -20,10 +21,15 @@ export default {
           taxiInfo = driversLocation.error;
       }
       // console.log("reducers",taxiInfo);
-      return { ...state, taxiInfo};
+      return { ...state, taxiInfo };
     },
   },
-  effects: {},
+  effects: {
+    *fetchDirecions({ payload: { lat, lng, olat, olng } }, { call, put }) {
+      const result = yield call(fetchDirecions, lat, lng, olat, olng);
+      console.log("eff result:",result);
+    }
+  },
   subscriptions: {},
 };
 
