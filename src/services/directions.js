@@ -1,5 +1,5 @@
 
-export async function fetchDirecions(lat,lng,olat,olng){
+export function fetchDirecions(lat,lng,olat,olng){
   const DirectionsService = new google.maps.DirectionsService();
 
   return new Promise((resolve,reject)=> {
