@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { GoogleMap, OverlayView } from 'react-google-maps';
+import taxiPng from '../data/taxiIcon.png';
 
 export default class TaxiMarker extends Component{
 
@@ -36,7 +37,7 @@ export default class TaxiMarker extends Component{
        */
     >
       <div>
-        <img height="30" width="30" src={`/src/data/taxiIcon.png`} />
+        <img height="30" width="30" src={taxiPng} />
         <div>driver</div>
       </div>
     </OverlayView>
