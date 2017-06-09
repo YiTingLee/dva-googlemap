@@ -66,10 +66,10 @@ class SimpleMapExample extends Component {
   }
 }
 
-function mapStateToProps(state){
+function mapStateToProps({ main }){
   return {
-    taxiInfo : state.main.taxiInfo,
-    route : state.main.directionsResponse
+    taxiInfo : main.taxiInfo,
+    route : main.directionsResponse
   };
 }
 

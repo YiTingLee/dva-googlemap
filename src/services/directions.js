@@ -17,14 +17,11 @@ export function fetchDirecions(lat,lng,olat,olng){
        }
      });  
   })
-    // .then((result) => {
-    //   return ({
-    //     type:FEATCH_DIRECTIONS,
-    //     payload:result
-    //   });
-    // })
-    // .catch((reason)=>{
-    //   console.log("Error Fetch");
-    //   return reason;
-    // });
+    .then((result) => {
+      return result;
+    })
+    .catch((reason)=>{
+      console.log("Error Fetch");
+      return reason;
+    });
 }
